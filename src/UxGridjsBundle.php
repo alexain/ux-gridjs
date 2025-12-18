@@ -23,7 +23,7 @@ final class UxGridjsBundle extends AbstractBundle
         $builder->prependExtensionConfig('framework', [
             'asset_mapper' => [
                 'paths' => [
-                    __DIR__ . '/../assets' => '@alexain/ux-gridjs',
+                    __DIR__ . '/assets' => '@alexain/ux-gridjs',
                 ],
             ],
         ]);

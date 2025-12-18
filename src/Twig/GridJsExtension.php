@@ -20,7 +20,7 @@ final class GridJsExtension extends AbstractExtension
     public function render(array $grid): string
     {
         $encoded = json_encode($grid, JSON_UNESCAPED_SLASHES);
-        if ($encoded === false) {
+        if (false === $encoded) {
             $encoded = '{}';
         }
 
@@ -28,15 +28,15 @@ final class GridJsExtension extends AbstractExtension
 
         $options = is_array($grid['options'] ?? null) ? $grid['options'] : [];
 
-        $wrapperClass   = (string) ($options['wrapper_class'] ?? '');
+        $wrapperClass = (string) ($options['wrapper_class'] ?? '');
         $containerClass = (string) ($options['container_class'] ?? '');
 
-        $wrapperClassAttr = $wrapperClass !== ''
-            ? ' class="' . htmlspecialchars($wrapperClass, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"'
+        $wrapperClassAttr = '' !== $wrapperClass
+            ? ' class="'.htmlspecialchars($wrapperClass, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8').'"'
             : '';
 
-        $containerClassAttr = $containerClass !== ''
-            ? ' class="' . htmlspecialchars($containerClass, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '"'
+        $containerClassAttr = '' !== $containerClass
+            ? ' class="'.htmlspecialchars($containerClass, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8').'"'
             : '';
 
         $toolbarButtons = is_array($options['toolbar_buttons'] ?? null) ? $options['toolbar_buttons'] : [];
@@ -56,7 +56,7 @@ final class GridJsExtension extends AbstractExtension
      */
     private function renderToolbar(array $buttons): string
     {
-        if ($buttons === []) {
+        if ([] === $buttons) {
             return '';
         }
 
@@ -67,9 +67,9 @@ final class GridJsExtension extends AbstractExtension
                 continue;
             }
 
-            $label  = (string) ($btn['label'] ?? '');
+            $label = (string) ($btn['label'] ?? '');
             $action = (string) ($btn['action'] ?? '');
-            if ($label === '' || $action === '') {
+            if ('' === $label || '' === $action) {
                 continue;
             }
 

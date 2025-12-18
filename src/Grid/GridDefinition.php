@@ -14,11 +14,13 @@ final class GridDefinition
         public readonly bool $search = true,
         public readonly bool $sort = true,
         public array $options = [],
-    ) {}
+    ) {
+    }
 
     public function withToolbar(array $buttons): self
     {
         $this->options['toolbar_buttons'] = $buttons;
+
         return $this;
     }
 }

@@ -12,5 +12,6 @@ final class GridColumn
         public readonly bool $searchable = true,
         public readonly ?string $width = null,
         public readonly array $options = [],
-    ) {}
+    ) {
+    }
 }

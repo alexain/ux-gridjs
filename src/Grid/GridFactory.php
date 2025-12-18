@@ -13,7 +13,7 @@ final class GridFactory
         int $pageSize = 10,
         bool $search = true,
         bool $sort = true,
-        array $options = []
+        array $options = [],
     ): GridDefinition {
         return new GridDefinition($dataUrl, $columns, $pageSize, $search, $sort, $options);
     }

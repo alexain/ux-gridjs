@@ -1,0 +1,21 @@
+{
+  "name": "@alexain/ux-gridjs",
+  "private": true,
+  "symfony": {
+    "controllers": {
+      "grid": {
+        "main": "controllers/grid_controller.js",
+        "fetch": "eager",
+        "enabled": false
+      }
+    },
+    "importmap": {
+      "gridjs": "^6.2.0",
+      "@hotwired/stimulus": "^3.0.0"
+    }
+  },
+  "peerDependencies": {
+    "gridjs": "^6.2.0",
+    "@hotwired/stimulus": "^3.0.0"
+  }
+}

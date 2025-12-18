@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 import { Grid } from "gridjs";
+import { itIT, frFR, deDE, esES } from "gridjs/l10n";
 import "gridjs/dist/theme/mermaid.min.css";
 
 export default class extends Controller {
@@ -9,7 +10,6 @@ export default class extends Controller {
     connect() {
         this.beforeCache = () => this.destroy();
 
-        // Turbo è opzionale: se non c'è, questo evento non scatterà mai
         document.addEventListener("turbo:before-cache", this.beforeCache);
 
         this.render();
@@ -26,7 +26,6 @@ export default class extends Controller {
     }
 
     resetSort() {
-        // Pragmatico: reset completo dello stato (sort incluso)
         this.destroy();
         this.render();
     }
@@ -72,12 +71,11 @@ export default class extends Controller {
                 }),
                 total: (json) => json.total,
             },
-            // language: this.getLanguage(cfg), // opzionale se gestisci l10n
+            language: this.getLanguage(cfg),
         });
 
         const host = this.hasContainerTarget ? this.containerTarget : this.element;
 
-        // Anti-race: monta sempre su un nodo nuovo
         if (this._mountNode) this._mountNode.remove();
         this._mountNode = document.createElement("div");
         host.appendChild(this._mountNode);
@@ -116,6 +114,23 @@ export default class extends Controller {
             }
             default:
                 return String(cell);
+        }
+    }
+
+    getLanguage(cfg) {
+        const locale = cfg.options?.locale;
+
+        switch (locale) {
+            case "it":
+                return itIT;
+            case "fr":
+                return frFR;
+            case "de":
+                return deDE;
+            case "es":
+                return deDE;
+            default:
+                return undefined;
         }
     }
 }

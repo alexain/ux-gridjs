@@ -1,6 +1,18 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
 .idea/
+.vscode/
+
+# Composer / PHP
 var/
 vendor/
-
-.php-cs-fixer.cache
 composer.lock
+.php-cs-fixer.cache
+
+# Cache / tooling
+.phpunit.result.cache
+/.php_cs.cache
+/.php-cs-fixer.cache
+/.phpstan.cache
+/.psalm.cache

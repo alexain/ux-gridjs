@@ -37,8 +37,9 @@ Register/use the Stimulus controller grid_controller.js shipped by this bundle.
 
 Twig rendering:
 
+```console
 {{ gridjs_render(grid) }}
-
+```
 
 Where grid is the array produced by GridPresenter::toArray().
 

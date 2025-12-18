@@ -1,0 +1,12 @@
+services:
+  Alexain\UxGridjs\:
+    resource: '../../'
+    exclude:
+      - '../../DependencyInjection/'
+      - '../../Resources/'
+      - '../../assets/'
+    autowire: true
+    autoconfigure: true
+
+  Alexain\UxGridjs\Twig\GridJsExtension:
+    tags: ['twig.extension']

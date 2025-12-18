@@ -1,0 +1,38 @@
+{
+  "name": "alexain/ux-gridjs",
+  "description": "Symfony UX-style integration for Grid.js with AssetMapper + Stimulus (Turbo optional).",
+  "type": "symfony-bundle",
+  "keywords": [
+    "symfony-ux"
+  ],
+  "homepage": "https://github.com/alexain/ux-gridjs",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alessandro Capano",
+      "email": "xainbit@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "symfony/framework-bundle": "^7.0 || ^8.0",
+    "symfony/twig-bundle": "^7.0 || ^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Alexain\\UxGridjs\\": "src/"
+    }
+  },
+  "extra": {
+    "symfony": {
+      "requires": "7.0"
+    },
+    "thanks": {
+      "name": "symfony/ux",
+      "url": "https://github.com/symfony/ux"
+    }
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.92"
+  }
+}

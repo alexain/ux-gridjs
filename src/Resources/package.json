@@ -1,0 +1,12 @@
+{
+  "name": "@alexain/ux-gridjs",
+  "private": true,
+  "symfony": {
+    "controllers": {
+      "grid": {
+        "main": "controllers/grid_controller.js",
+        "fetch": "eager"
+      }
+    }
+  }
+}

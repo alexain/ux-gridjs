@@ -25,7 +25,8 @@
   },
   "extra": {
     "symfony": {
-      "requires": "7.0"
+      "requires": "7.0",
+      "allow-contrib": "true"
     },
     "thanks": {
       "name": "symfony/ux",
